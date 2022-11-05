@@ -1,40 +1,20 @@
 service: sls-guru-article-crud
-frameworkVersion: '3'
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  stackName: ${self:service}-${self:custom.stage}
+
+plugins:
+  - serverless-offline
 
 provider:
   name: aws
   runtime: nodejs14.x
 
 functions:
-	list:
-    handler: handler.destroy
+  list:
+    handler: handler.list
     events:
       - http:
-					path: /articles
-  create:
-    handler: handler.create
-    events:
-      - http:
-					path: /articles
-					method: post
-
-	show:
-    handler: handler.show
-    events:
-      - http:
-					path: /articles/{id}
-
-
-	update:
-    handler: handler.update
-    events:
-      - http:
-					path: /articles/{id}
-					method: put
-
-	destroy:
-    handler: handler.destroy
-    events:
-      - http:
-					path: /articles/{id}
-					method: delete
+          path: articles
+          method: get
