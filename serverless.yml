@@ -1,0 +1,40 @@
+service: sls-guru-article-crud
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+	list:
+    handler: handler.destroy
+    events:
+      - http:
+					path: /articles
+  create:
+    handler: handler.create
+    events:
+      - http:
+					path: /articles
+					method: post
+
+	show:
+    handler: handler.show
+    events:
+      - http:
+					path: /articles/{id}
+
+
+	update:
+    handler: handler.update
+    events:
+      - http:
+					path: /articles/{id}
+					method: put
+
+	destroy:
+    handler: handler.destroy
+    events:
+      - http:
+					path: /articles/{id}
+					method: delete
