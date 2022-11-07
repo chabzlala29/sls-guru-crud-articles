@@ -2,7 +2,10 @@
   "name": "sls-guru-express-api",
   "version": "1.0.0",
   "description": "Articles Express API (CRUD)",
+  "devDependencies": {
+    "serverless-offline": "^5.12.1"
+  },
   "dependencies": {
-    "serverless": "^3.24.1"
+    "serverless": "^1.73.0"
   }
 }

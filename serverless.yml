@@ -1,11 +1,13 @@
 service: sls-guru-article-crud
 
+plugins:
+  - serverless-offline
+
 custom:
   stage: ${opt:stage, self:provider.stage}
   stackName: ${self:service}-${self:custom.stage}
-
-plugins:
-  - serverless-offline
+  serverless-offline:
+    port: 4000
 
 provider:
   name: aws
@@ -14,7 +16,13 @@ provider:
 functions:
   list:
     handler: handler.list
+    layers:
+      - !Ref NodemoduleslayerLambdaLayer
     events:
       - http:
           path: articles
           method: get
+
+layers:
+  nodemoduleslayer:
+    path: node_modules
