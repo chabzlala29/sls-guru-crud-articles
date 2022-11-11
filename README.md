@@ -58,3 +58,7 @@ curl --location --request PUT 'http://localhost:4000/articles/3bd530a0-6187-11ed
         "description": "(UPDATED) I'\''m not actually started with NodeJS developing web applications, I'\''m more of a Ruby developer, fortunately Ruby 2.7 is supported by AWS Lambda does learning Serverless Framework is favorable on my end. I also worked on a simple PDF Generator Lambda function created via NodeJS with the help of Knex module to communicate with our existing RDS DB."
 }'
 ```
+
+### Automated deployment process via Github Actions:
+
+(WIP)
