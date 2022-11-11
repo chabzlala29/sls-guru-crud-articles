@@ -1,0 +1,4 @@
+{
+  "title":"Passing my application as a Serverless Guru Engineer",
+  "description":"I'm not actually started with NodeJS developing web applications, I'm more of a Ruby developer, fortunately Ruby 2.7 is supported by AWS Lambda does learning Serverless Framework is favorable on my end. I also worked on a simple PDF Generator Lambda function created via NodeJS with the help of Knex module to communicate with our existing RDS DB."
+}
