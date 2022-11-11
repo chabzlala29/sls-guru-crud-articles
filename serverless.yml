@@ -45,6 +45,20 @@ functions:
       - http:
           path: articles/{id}
           method: get
+  destroy:
+    handler: src/functions/destroy-article.main
+    description: Delete article by ID
+    events:
+      - http:
+          path: articles/{id}
+          method: delete
+  update:
+    handler: src/functions/update-article.main
+    description: Update article by ID
+    events:
+      - http:
+          path: articles/{id}
+          method: put
 resources:
   Resources:
     ArticlesDynamoDBTable:
