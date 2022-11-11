@@ -25,18 +25,25 @@ provider:
 
 functions:
   create:
-    handler: handler.create
+    handler: src/functions/create-article.main
     description: Create an article based on title and description
     events:
       - http:
           path: articles
           method: post
   list:
-    handler: handler.list
+    handler: src/functions/list-articles.main
     description: List all articles
     events:
       - http:
           path: articles
+          method: get
+  show:
+    handler: src/functions/show-article.main
+    description: Show article by ID
+    events:
+      - http:
+          path: articles/{id}
           method: get
 resources:
   Resources:
