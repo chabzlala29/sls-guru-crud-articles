@@ -61,4 +61,5 @@ curl --location --request PUT 'http://localhost:4000/articles/3bd530a0-6187-11ed
 
 ### Automated deployment process via Github Actions:
 
-(WIP)
+1. Basically when you push something it will trigger a deployment workflow.
+2. Stage parameter will be based on the branch name, so if we need to support multiple stages or environments (e.g.: dev, staging, master), we need to push to specific branch equivalent to the stage name.
