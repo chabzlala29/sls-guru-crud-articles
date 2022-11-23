@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - name: serverless deploy --stage {{ github.ref_name }}
+    - name: serverless deploy --stage ${{ github.ref_name }}
       uses: serverless/github-action@v1
       with:
         args: deploy
